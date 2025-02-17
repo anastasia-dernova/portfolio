@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import "./index.scss";
+// import "./index.scss";
 import Questions from "../../../components/Questions"
 
 // const questions = [
