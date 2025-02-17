@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import ServiceSlider from "@/components/ServiceSlider";
-import { Socials } from "@/constants";
 import ProjectSlider from "@/components/ProjectSlider";
 
 const Page = () => {

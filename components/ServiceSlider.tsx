@@ -7,8 +7,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 
 import { FreeMode, Pagination } from "swiper/modules";
-import { ProImages, ProImages2, ServiceData } from "@/constants";
-import Image from "next/image";
+import { ServiceData } from "@/constants";
+
 
 const ServiceSlider = () =>{
     return(
