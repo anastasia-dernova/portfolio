@@ -22,8 +22,8 @@ export default function Home() {
 
       <div className="flex flex-col gap-3 z-[10] pl-40 pt-20">
         <h1 className="text-[24px] text-[#047857] max-w-[500px]">
-          Hi, I'm Anastasia Dernova 
-          Frontend Developer | {" "}
+          Hi, I am Anastasia Dernova 
+          Frontend Developer
           <span className="text-[#86198f]">JavaScript, React, and Next.js Enthusiast  </span>
         </h1>
         <p className="text-[16px] text-[#047857] md:text-[#047857] mb-10 md:pb-2 max-w-[400px]">

@@ -17,12 +17,12 @@ const Sidebar = () => {
     useEffect(() => {
         if(prevPath !== path){
             setIsRouting(true)
+            setPrevPath(path);
         }
-    }, [path, prevPath])
+    }, [path])
 
     useEffect(() => {
         if(isRouting) {
-            setPrevPath(path);
             const timeout = setTimeout(() => {
                 setIsRouting(false)
             }, 1200)

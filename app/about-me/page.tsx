@@ -10,15 +10,15 @@ const Page = () => {
                     Information about me
                 </h1>
                 <p className="max-w-[400px]text-[16px] text-[#047857] md:text-[#047857] ">
-                    Hi! I’m a young, creative, and energetic front-end developer with a passion for bringing
+                    Hi! I am a young, creative, and energetic front-end developer with a passion for bringing
                     ideas to life through beautiful and interactive designs. I love the instant feedback 
                     that front-end development provides, where creativity knows no limits. 
                 </p>
                 <p className="max-w-[400px]text-[16px] text-[#047857] md:text-[#047857] "> 
-                    Outside of coding, you’ll find me exploring new coffee flavors, 
+                    Outside of coding, you will find me exploring new coffee flavors, 
                     getting lost in books and films, or traveling to new places. I thrive in friendly, 
                     collaborative environments and enjoy meeting new people. I speak English, Russian, and Czech, 
-                    and I’m currently learning Italian. Let’s connect and create something amazing together!
+                    and I am currently learning Italian. Let us connect and create something amazing together!
                 </p>
             </div>
 
