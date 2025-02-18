@@ -5,7 +5,7 @@ const DownloadCV = () => {
   return (
     <div className="fixed top-5 right-10 text-[#86198f] px-5 py-4 rounded-full shadow-lg flex items-center gap-2 hover:bg-[#86EFAC] transition-all">
       <a
-        href="/public/CV Anastasia Dernova Frontend Developer.pdf" 
+        href="/CV.pdf"
         download="Anastasia Dernova_CV.pdf" 
         className="flex items-center gap-2"
       >
