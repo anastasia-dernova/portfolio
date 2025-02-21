@@ -2,7 +2,7 @@ import React from "react";
 import ProjectSlider from "@/components/ProjectSlider";
 import Navbar from "@/components/Navbar";
 
-const Page = () => {
+const About = () => {
     return (
 
         <div className="flex items-center justify-center gap-5 flex-col md:flex-row h-screen bg-[#f0fdf4]">
@@ -24,11 +24,11 @@ const Page = () => {
                 </p>
             </div>
 
-        <ProjectSlider/>
+            <ProjectSlider/>
 
         </div>
 
     )
 }
 
-export default Page; 
+export default About; 

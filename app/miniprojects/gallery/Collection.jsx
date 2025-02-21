@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 // import { useState } from 'react';
 // interface CollectionProps {
 //     images: string[];
@@ -102,6 +102,17 @@ export const Collection = ({ images, name }) => {
                 <img className="collection__mini" src={getDisplayImages()[2]} alt="Item" />
                 <img className="collection__mini" src={getDisplayImages()[3]} alt="Item" />
             </div>
+
+            {/* <div className="collection__bottom">
+                {getDisplayImages().slice(1, 4).map((image, index) => (
+                    <img 
+                        key={`mini-${index}`}
+                        className="collection__mini" 
+                        src={image} 
+                        alt={`Item ${index + 1}`} 
+                    />
+                ))}
+            </div> */}
             <h4>{name}</h4>
         </div>
     );

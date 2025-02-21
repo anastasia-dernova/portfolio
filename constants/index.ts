@@ -15,15 +15,7 @@ import {
       name: "LinkedIn",
       src: "/assets/linkedin.svg",
       link: "https://www.linkedin.com/in/anastasia-dernova-59503b224/"
-    },
-    // {
-    //   name: "Facebook",
-    //   src: "/assets/facebook.svg",
-    // },
-    // {
-    //   name: "Instagram",
-    //   src: "/assets/instagram.svg",
-    // },
+    }
   ];
   
   export const NavLinks = [
