@@ -6,7 +6,7 @@ body {
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eff0f1;
+  background-color: #f0fdf4;
 }
 
 * {
@@ -42,11 +42,11 @@ h1 {
     transition: all 0.15s ease-in-out;
 
     &:hover {
-      border-color: #000;
+      border-color: #86198f;
     }
 
     &.active {
-      background-color: #000;
+      background-color: #86198f;
       color: #fff;
     }
   }
