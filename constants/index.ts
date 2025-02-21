@@ -51,7 +51,7 @@ import {
     },
     {
       src: "/assets/projects/ImageIT1.jpg",
-      link: "",
+      link: "/miniprojects/gallery",
     },
     {
       src: "/assets/projects/ImageIT2.jpg",

@@ -1,10 +1,12 @@
 import React from "react";
 import ProjectSlider from "@/components/ProjectSlider";
+import Navbar from "@/components/Navbar";
 
 const Page = () => {
     return (
 
         <div className="flex items-center justify-center gap-5 flex-col md:flex-row h-screen bg-[#f0fdf4]">
+            <Navbar/>
             <div className="flex flex-col gap-3">
                 <h1 className="text-[50px] text-[#86198f] font-semibold">
                     Information about me

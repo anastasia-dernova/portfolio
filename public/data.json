@@ -1,0 +1,70 @@
+{
+    "categories": [
+      { "name": "All" },
+      { "name": "Flowers" },
+      { "name": "Travel" },
+      { "name": "Sea" }
+    ],
+    "collections": [
+      {
+        "category": 1,
+        "name": "Beautiful flowers",
+        "photos": [
+          "/assets/gallery/flowers/flowers1.jpeg",
+          "/assets/gallery/flowers/flowers2.jpeg",
+          "/assets/gallery/flowers/flowers3.jpeg",
+          "/assets/gallery/flowers/flowers4.jpeg"
+        ]
+      },
+      {
+        "category": 2,
+        "name": "Trip to France",
+        "photos": [
+          "/assets/gallery/travel/france5.jpeg",
+          "/assets/gallery/travel/france6.jpeg",
+          "/assets/gallery/travel/france7.jpeg",
+          "/assets/gallery/travel/france8.jpeg"
+        ]
+      },
+      {
+        "category": 3,
+        "name": "Sea",
+        "photos": [
+            "/assets/gallery/sea/sea1.jpeg",
+            "/assets/gallery/sea/sea2.jpeg",
+            "/assets/gallery/sea/sea3.jpeg",
+            "/assets/gallery/sea/sea4.jpeg"
+        ]
+      },
+      {
+        "category": 2,
+        "name": "Beautiful Croatia",
+        "photos": [
+            "/assets/gallery/travel/croatia1.jpeg",
+            "/assets/gallery/travel/croatia2.jpeg",
+            "/assets/gallery/travel/croatia3.jpeg",
+            "/assets/gallery/travel/croatia4.jpeg"
+        ]
+      },
+      {
+        "category": 2,
+        "name": "Trip to France",
+        "photos": [
+          "/assets/gallery/travel/france1.jpeg",
+          "/assets/gallery/travel/france2.jpeg",
+          "/assets/gallery/travel/france3.jpeg",
+          "/assets/gallery/travel/france4.jpeg"
+        ]
+      },
+      {
+        "category": 2,
+        "name": "Traveling in Montenegro",
+        "photos": [
+            "/assets/gallery/travel/montenegro1.jpeg",
+            "/assets/gallery/travel/montenegro2.jpeg",
+            "/assets/gallery/travel/montenegro3.jpeg",
+            "/assets/gallery/travel/montenegro4.jpeg"
+        ]
+      }
+    ]
+}
