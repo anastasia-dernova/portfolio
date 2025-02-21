@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import './index.scss';
+import './galleryStyle.scss';
 import {Collection} from './Collection'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
     });
     
   return (
-    <div className="App">
+    <div className="Gallery">
       <h1>Gallery with photos from my life</h1>
       <div className="top">
         <ul className="tags">

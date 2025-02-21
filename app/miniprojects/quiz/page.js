@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import "./index.scss";
+import "./quizStyle.scss";
 import Questions from "../../../components/Questions"
 
 
@@ -50,7 +50,7 @@ export default function MiniProject() {
   };
 
   return (
-    <div className="App">
+    <div className="Quiz">
       {step !== Questions.length ? (
         <Game step={step} question={question} onClickVariant={onClickVariant} />
       ) : (
