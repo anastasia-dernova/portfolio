@@ -2,8 +2,31 @@
 import { useState } from 'react';
 
 const WeatherDashboard = () => {
+    interface WeatherData {
+        name: string;
+        sys: {
+          country: string;
+        };
+        main: {
+          temp: number;
+          feels_like: number;
+          humidity: number;
+        };
+        weather: [{
+          description: string;
+          icon: string;
+        }];
+        wind: {
+          speed: number;
+        };
+        cod: number;
+    }
+      
+    const [weather, setWeather] = useState<WeatherData | null>(null);
+
+
   const [city, setCity] = useState('');
-  const [weather, setWeather] = useState<any>(null);
+//   const [weather, setWeather] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 

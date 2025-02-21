@@ -1,7 +1,11 @@
 'use client';
 import { useState } from 'react';
+interface CollectionProps {
+    images: string[];
+    name: string;
+}
 
-export const Collection = ({ images, name }) => {
+export const Collection: React.FC<CollectionProps> = ({ images, name }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
