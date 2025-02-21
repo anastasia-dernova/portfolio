@@ -55,7 +55,7 @@ import {
     },
     {
       src: "/assets/projects/ImageIT2.jpg",
-      link: "",
+      link: "/miniprojects/weather",
     },
     {
       src: "/assets/projects/ImageIT3.jpg",

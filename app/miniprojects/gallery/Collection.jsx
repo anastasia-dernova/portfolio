@@ -1,17 +1,52 @@
-import React from "react";
+'use client';
+import { useState } from 'react';
 
+export const Collection = ({ images, name }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export const Collection = ({images, name}) => {
+    const handleNext = () => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const handlePrev = () => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    const getDisplayImages = () => {
+        let displayImages = [...images];
+        displayImages = [
+            displayImages[currentIndex],
+            ...displayImages.slice(currentIndex + 1),
+            ...displayImages.slice(0, currentIndex)
+        ];
+        return displayImages;
+    };
+
     return (
-        <div className="collection">
-          <img className="collection__big" src={images[0]} alt="Item" />
-          <div className="collection__bottom">
-            <img className="collection__mini" src={images[1]} alt="Item" />
-            <img className="collection__mini" src={images[2]} alt="Item" />
-            <img className="collection__mini" src={images[3]} alt="Item" />
-          </div>
-          <h4>{name}</h4>
+        <div className="collection relative">
+            <button 
+                onClick={handlePrev} 
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#86198f]/50 text-white rounded-full p-2 hover:bg-[#86198f]/70"
+            >
+                ←
+            </button>
+            <button 
+                onClick={handleNext} 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#86198f]/50 text-white rounded-full p-2 hover:bg-[#86198f]/70"
+            >
+                →
+            </button>
+            <img 
+                className="collection__big" 
+                src={getDisplayImages()[0]} 
+                alt="Item" 
+            />
+            <div className="collection__bottom">
+                <img className="collection__mini" src={getDisplayImages()[1]} alt="Item" />
+                <img className="collection__mini" src={getDisplayImages()[2]} alt="Item" />
+                <img className="collection__mini" src={getDisplayImages()[3]} alt="Item" />
+            </div>
+            <h4>{name}</h4>
         </div>
     );
-
-}
+};
