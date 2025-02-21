@@ -19,7 +19,7 @@ const Sidebar = () => {
             setIsRouting(true)
             setPrevPath(path);
         }
-    }, [path])
+    }, [prevPath])
 
     useEffect(() => {
         if(isRouting) {

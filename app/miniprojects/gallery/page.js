@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import './index.scss';
-import {Collection} from './Collection.tsx'
+import {Collection} from './Collection'
 
 function App() {
     const [isLoading, setIsLoading] = React.useState(true)
