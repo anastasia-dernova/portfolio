@@ -1,9 +1,9 @@
-import WeatherDashboard from "@/components/WeatherDashboard";
+// import WeatherDashboard from "@/components/WeatherDashboard";
 
-const Weather = () => {
-    return (
-        <WeatherDashboard/>
-    )
-}
+// const Weather = () => {
+//     return (
+//         <WeatherDashboard/>
+//     )
+// }
 
-export default Weather; 
+// export default Weather; 
