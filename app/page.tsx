@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex flex-row gap-5">
             {Socials.map((social) => (
               <a 
-                // key={social.name} 
+                key={social.name} 
                 href={social.link} 
                 // target="_blank" 
                 // rel="noopener noreferrer" 
