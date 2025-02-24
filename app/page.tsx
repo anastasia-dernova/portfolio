@@ -11,16 +11,6 @@ export default function Home() {
       <div className="absolute right-0 top-0 h-full w-[100%] z-[2]"> 
         <Particle/>
       </div>
-      {/* <div className="absolute right-10 md:right-40 bottom-0 z-[10]"> */}
-        {/* <Image
-          src="/assets/MoustacheMan.png"
-          alt="MoustacheMan"
-          width={560}
-          height={560}
-          className="w-[300px] h-[300px] z-[1] md:h-[560px] md:w-[560px]"
-        /> */}
-      {/* </div> */}
-      
 
       <div className="flex flex-col gap-3 z-[10] pl-40 pt-20">
         <h1 className="text-[24px] text-[#047857] max-w-[500px]">
@@ -39,11 +29,11 @@ export default function Home() {
           <div className="flex flex-row gap-5">
             {Socials.map((social) => (
               <a 
-                key={social.name} 
+                // key={social.name} 
                 href={social.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:opacity-80 transition-opacity"
+                // target="_blank" 
+                // rel="noopener noreferrer" 
+                // className="hover:opacity-80 transition-opacity"
               >
                 <Image
                   key={social.name}
