@@ -40,14 +40,17 @@ import {
     {
       src: "/assets/projects/ImageIT.jpg",
       link: "/miniprojects/quiz",
+      
     },
     {
       src: "/assets/projects/ImageIT1.jpg",
-      link: "/miniprojects/gallery",
+      // link: "/miniprojects/gallery",
+      link: "",
     },
     {
       src: "/assets/projects/ImageIT2.jpg",
-      link: "/miniprojects/weather",
+      // link: "/miniprojects/weather",
+      link: "",
     },
     {
       src: "/assets/projects/ImageIT3.jpg",
