@@ -44,8 +44,8 @@ import {
     },
     {
       src: "/assets/projects/ImageIT1.jpg",
-      // link: "/miniprojects/gallery",
-      link: "",
+      link: "/miniprojects/gallery",
+      // link: "",
     },
     {
       src: "/assets/projects/ImageIT2.jpg",
