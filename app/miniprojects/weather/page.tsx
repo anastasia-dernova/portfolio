@@ -1,48 +1,52 @@
 'use client';
 import { useState } from 'react';
 
+interface WeatherData {
+  name: string;
+  sys: {
+    country: string;
+  };
+  main: {
+    temp: number;
+    feels_like: number;
+    humidity: number;
+  };
+  weather: [{
+    description: string;
+    icon: string;
+  }];
+  wind: {
+    speed: number;
+  };
+  cod: number;
+}
+
 const WeatherDashboard = () => {
-    interface WeatherData {
-        name: string;
-        sys: {
-          country: string;
-        };
-        main: {
-          temp: number;
-          feels_like: number;
-          humidity: number;
-        };
-        weather: [{
-          description: string;
-          icon: string;
-        }];
-        wind: {
-          speed: number;
-        };
-        cod: number;
-    }
-      
-    const [weather, setWeather] = useState<WeatherData | null>(null);
-
-
   const [city, setCity] = useState('');
-//   const [weather, setWeather] = useState<any>(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
   const fetchWeather = async () => {
     if (!city) return;
 
+    const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY || '';
+    
+    if (!apiKey) {
+      setError('API key is missing. Please check your environment configuration.');
+      return;
+    }
+
     try {
       setLoading(true);
       setError('');
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
       const data = await response.json();
       
       if (data.cod !== 200) {
-        setError(data.message);
+        setError(data.message || 'Error fetching weather data');
         setWeather(null);
         return;
       }
@@ -75,8 +79,9 @@ const WeatherDashboard = () => {
           <button
             onClick={fetchWeather}
             className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            disabled={loading}
           >
-            Search
+            {loading ? 'Searching...' : 'Search'}
           </button>
         </div>
 
