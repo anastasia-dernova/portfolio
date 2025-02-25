@@ -52,9 +52,10 @@ const WeatherDashboard = () => {
       }
       
       setWeather(data);
-    } catch (err) {
+    } catch (error) {
       setError('Failed to fetch weather data');
       setWeather(null);
+      console.error(error); 
     } finally {
       setLoading(false);
     }
