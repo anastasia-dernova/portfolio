@@ -62,9 +62,9 @@ const WeatherDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-blue-100 to-blue-300">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-[#f0fdf4] to-[#34D399]">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-blue-900">
+        <h1 className="text-4xl font-bold text-center mb-8 text-[#86198f]">
           Weather Dashboard
         </h1>
         
@@ -79,7 +79,7 @@ const WeatherDashboard = () => {
           />
           <button
             onClick={fetchWeather}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-4 py-2 bg-[#86198f] text-white rounded-lg hover:bg-[#701A75] transition-colors"
             disabled={loading}
           >
             {loading ? 'Searching...' : 'Search'}
