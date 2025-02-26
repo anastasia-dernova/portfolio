@@ -55,7 +55,7 @@ const WeatherDashboard = () => {
     } catch (error) {
       setError('Failed to fetch weather data');
       setWeather(null);
-      console.error(error); 
+      console.error(error);
     } finally {
       setLoading(false);
     }

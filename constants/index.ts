@@ -54,7 +54,7 @@ import {
     },
     {
       src: "/assets/projects/ImageIT3.jpg",
-      link: "",
+      link: "/miniprojects/movies",
     },
   ];
   
