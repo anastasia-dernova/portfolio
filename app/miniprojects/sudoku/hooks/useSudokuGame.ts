@@ -20,7 +20,7 @@ export function useSudokuGame() {
   const [isLoading, setIsLoading] = useState(true);
   const [gameState, setGameState] = useState<GameState>('playing');
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
-  const [notesMode, setNotesMode] = useState(false);
+  // const [notesMode, setNotesMode] = useState(false);
   const [timer, setTimer] = useState(0);
   const [originalBoard, setOriginalBoard] = useState<SudokuBoard>([]);
   const [solution, setSolution] = useState<SudokuBoard>([]);
@@ -87,12 +87,6 @@ export function useSudokuGame() {
     setCellStates(prev => {
       const newStates = [...prev];
       
-      if (notesMode && num !== null) {
-        // Toggle note
-        const notes = [...newStates[row][col].notes];
-        notes[num - 1] = !notes[num - 1];
-        newStates[row][col] = {...newStates[row][col], notes};
-      } else {
         // Set value
         newStates[row][col] = {
           ...newStates[row][col], 
@@ -114,7 +108,6 @@ export function useSudokuGame() {
             }
           }
         }
-      }
       
       return newStates;
     });
@@ -195,10 +188,10 @@ export function useSudokuGame() {
     isLoading,
     gameState,
     difficulty,
-    notesMode,
+    // notesMode,
     timer,
     setDifficulty,
-    setNotesMode,
+    // setNotesMode,
     generateNewPuzzle,
     handleCellClick,
     handleNumberInput,

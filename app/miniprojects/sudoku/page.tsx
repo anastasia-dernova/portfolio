@@ -11,7 +11,7 @@ const SudokuGame = () => {
     isLoading,
     gameState,
     difficulty,
-    notesMode,
+    // notesMode,
     timer,  
     selectedCell,
     setDifficulty,
