@@ -1,4 +1,4 @@
-import { CellValue, SudokuBoard, CellState } from './types';
+import { SudokuBoard, CellState } from './types';
 
 // Check if placing a number in a position is valid
 export const isValid = (board: SudokuBoard, row: number, col: number, num: number): boolean => {
