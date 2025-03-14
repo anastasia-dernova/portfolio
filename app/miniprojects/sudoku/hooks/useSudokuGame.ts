@@ -22,7 +22,7 @@ export function useSudokuGame() {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
   // const [notesMode, setNotesMode] = useState(false);
   const [timer, setTimer] = useState(0);
-  const [_originalBoard, setOriginalBoard] = useState<SudokuBoard>([]);
+  const [, setOriginalBoard] = useState<SudokuBoard>([]);
   const [solution, setSolution] = useState<SudokuBoard>([]);
 
   // Timer ref for cleanup
