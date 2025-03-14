@@ -58,26 +58,28 @@ const ProjectSlider = () => {
                 <SwiperSlide className="mb-14">
                     <div className="grid grid-cols-2 gap-4 md:px-16">
                         {ProImages2.map((image) =>(
-                            <div className="relative group w-[150px] h-[150px] md:w-[230px] md:h-[230px]" key={image.src}>
-                                <Image 
-                                src={image.src}
-                                alt='project img'
-                                width={280}
-                                height={280}
-                                className="rounded-md w-full h-full object-cover"
-                                />
-                                <div className="cursor-pointer absolute inset-0 bg-gradient-to-r from-purple-800 via-pink0-500 to-purple-800 opacity-0 group-hover:opacity-70 transition-opacity duration-200"/>
-                                <div className="cursor-pointer absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-70 transition-opacity duration-200 text-white md:text-lg">
-                                    View project 
-                                    <Image
-                                    src='/assets/icons/arrow-right.svg'
-                                    alt='arrow right'
-                                    width={20}
-                                    height={20}
-                                    className='invert brightness-0 ml-2 '                
+                            <Link href={image.link} key={image.src} passHref>
+                                <div className="relative group w-[150px] h-[150px] md:w-[230px] md:h-[230px]" key={image.src}>
+                                    <Image 
+                                    src={image.src}
+                                    alt='project image'
+                                    width={280}
+                                    height={280}
+                                    className="rounded-md h-full w-full object-cover"
                                     />
+                                    <div className="cursor-pointer absolute inset-0 bg-gradient-to-r from-purple-800 via-pink0-500 to-purple-800 opacity-0 group-hover:opacity-70 transition-opacity duration-200"/>
+                                    <div className="cursor-pointer absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white md:text-lg">
+                                        View project 
+                                        <Image
+                                        src='/assets/icons/arrow-right.svg'
+                                        alt='arrow right'
+                                        width={20}
+                                        height={20}
+                                        className='invert brightness-0 ml-2'                
+                                        />
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
 
                     </div>
