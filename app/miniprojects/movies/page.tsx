@@ -58,7 +58,7 @@ const MovieSearch = () => {
         <h1 className="text-4xl font-bold text-center mb-8 text-[#86198f]">
           Movie Search
         </h1>
-        <div className="flex gap-2 mb-8">
+        <div className="flex flex-col gap-2 sm:flex-row mb-8">
           <input
             type="text"
             value={query}
@@ -69,7 +69,7 @@ const MovieSearch = () => {
           />
           <button
             onClick={searchMovies}
-            className="px-6 py-3 bg-[#86198f] text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-90"
+            className="py-3 px-4 md:px-6 bg-[#86198f] text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-90 whitespace-nowrap"
             disabled={loading || !query.trim()}
           >
             {loading ? 'Searching...' : 'Search'}
