@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Particle from "@/components/Particle";
-import { Socials } from "@/constants";
 import Navbar from "@/components/Navbar";
 
 
