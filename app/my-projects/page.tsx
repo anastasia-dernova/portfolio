@@ -10,7 +10,7 @@ const Page = () => {
                 <h1 className="text-[50px] text-[#86198f] font-semibold">
                     My projects
                 </h1>
-                <p className="max-w-[400px]text-[16px] text-gray-200 md:text-gray-400 ">
+                <p className="max-w-[400px] text-[16px] text-[#047857] md:text-[#047857] ">
                     Please take a look 
                     at my mini projects, that using different technology 
                 </p>
