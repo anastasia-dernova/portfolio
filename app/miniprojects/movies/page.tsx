@@ -1,27 +1,18 @@
 'use client';
-import { useState} from 'react';
+import { useMemo, useState} from 'react';
 import Image from 'next/image';
-
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  vote_average: number;
-  release_date: string;
-  overview: string;
-}
-
-interface SearchResults {
-  results: Movie[];
-  total_results: number;
-  total_pages: number;
-}
+import {Movie, SearchResults} from './types';
+import SortControls, { sortMovies, SortOption } from './SortControls';
+import MovieDetail from './MovieDetail';
 
 const MovieSearch = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [sortOption, setSortOption] = useState<SortOption>('none');
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+
 
   const searchMovies = async () => {
     if (!query.trim()) return;
@@ -57,14 +48,16 @@ const MovieSearch = () => {
       setLoading(false);
     }
   };
-
+  const sortedMovies = useMemo(() => {
+    return sortMovies(movies, sortOption);
+  }, [movies, sortOption]);
+  
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen p-8 bg-[#f0fdf4] text-white">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-white">
+        <h1 className="text-4xl font-bold text-center mb-8 text-[#86198f]">
           Movie Search
         </h1>
-        
         <div className="flex gap-2 mb-8">
           <input
             type="text"
@@ -72,16 +65,22 @@ const MovieSearch = () => {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && searchMovies()}
             placeholder="Search for movies..."
-            className="flex-1 p-3 rounded-lg border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-1 p-3 rounded-lg border border-gray-700 bg-white text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           <button
             onClick={searchMovies}
-            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
+            className="px-6 py-3 bg-[#86198f] text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-90"
             disabled={loading || !query.trim()}
           >
             {loading ? 'Searching...' : 'Search'}
           </button>
         </div>
+
+        <SortControls 
+          sortOption={sortOption} 
+          onSortChange={setSortOption} 
+          showControls={movies.length > 0}
+        />
 
         {error && (
           <div className="text-red-400 text-center mb-4">
@@ -95,43 +94,55 @@ const MovieSearch = () => {
           </div>
         )}
 
-        {movies.length > 0 && (
+        {sortedMovies.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {movies.map((movie) => (
-              <div key={movie.id} className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 transition-transform hover:-translate-y-2">
-                <div className="relative h-80 w-full">
-                  {movie.poster_path ? (
-                    <Image
-                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                      alt={movie.title}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center bg-gray-700">
-                      <span className="text-gray-400">No image available</span>
-                    </div>
-                  )}
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold mb-2 line-clamp-2">{movie.title}</h3>
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm text-gray-400">
-                      {movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}
-                    </span>
-                    <span className={`px-2 py-1 rounded text-sm ${
-                      movie.vote_average >= 7 ? 'bg-green-900 text-green-100' : 
-                      movie.vote_average >= 5 ? 'bg-yellow-900 text-yellow-100' : 
-                      'bg-red-900 text-red-100'
-                    }`}>
-                      {movie.vote_average.toFixed(1)}
-                    </span>
+            {sortedMovies.map((movie) => (
+              <div 
+                key={movie.id} 
+                className="bg-[#D4D4D4] rounded-lg overflow-hidden transition-transform hover:-translate-y-2 cursor-pointer" 
+                onClick={() => setSelectedMovie(movie)}
+              >
+                <div key={movie.id} className="bg-[#D4D4D4] rounded-lg overflow-hidden transition-transform hover:-translate-y-2">
+                  <div className="relative h-80 w-full">
+                    {movie.poster_path ? (
+                      <Image
+                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                        alt={movie.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full flex items-center justify-center bg-[#A3A3A3]">
+                        <span className="text-black">No image available</span>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-gray-400 text-sm line-clamp-3">{movie.overview}</p>
+                  <div className="p-4">
+                    <h3 className="text-xl text-[#404040] font-semibold mb-2 line-clamp-2">{movie.title}</h3>
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-sm text-[#737373]">
+                        {movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}
+                      </span>
+                      <span className={`px-2 py-1 rounded text-sm ${
+                        movie.vote_average >= 7 ? 'bg-green-900 text-green-100' : 
+                        movie.vote_average >= 5 ? 'bg-yellow-900 text-yellow-100' : 
+                        'bg-red-900 text-red-100'
+                      }`}>
+                        {movie.vote_average.toFixed(1)}
+                      </span>
+                    </div>
+                    <p className="text-[#737373] text-sm line-clamp-3">{movie.overview}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+        )}
+        {selectedMovie && (
+          <MovieDetail 
+            movie={selectedMovie} 
+            onClose={() => setSelectedMovie(null)} 
+          />
         )}
       </div>
     </div>

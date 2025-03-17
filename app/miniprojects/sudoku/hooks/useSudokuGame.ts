@@ -112,11 +112,17 @@ export function useSudokuGame() {
       return newStates;
     });
     
-    // Check if game is won
-    const currentBoard = getCurrentBoard();
-    if (isBoardComplete(currentBoard)) {
-      setGameState('won');
-    }
+    setTimeout(() => {
+      const currentBoard = getCurrentBoard();
+      const isComplete = currentBoard.every(row => row.every(cell => cell !== null));
+      const hasNoInvalidCells = !cellStates.some(row => 
+        row.some(cell => cell.isInvalid)
+      );
+      
+      if (isComplete && hasNoInvalidCells) {
+        setGameState('won');
+      }
+    }, 0);
   };
   
   // Toggle pause
