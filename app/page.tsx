@@ -1,8 +1,6 @@
 import Particle from "@/components/Particle";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import Image from "next/image";
-
 
 export default function Home() {
   return (
