@@ -1,5 +1,7 @@
 import Particle from "@/components/Particle";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -9,17 +11,7 @@ export default function Home() {
       <div className="absolute right-0 top-0 h-full w-[100%] z-[2]"> 
         <Particle/>
       </div>
-      {/* <div className="absolute right-10 md:right-40 bottom-0 z-[10]"> */}
-        {/* <Image
-          src="/assets/MoustacheMan.png"
-          alt="MoustacheMan"
-          width={560}
-          height={560}
-          className="w-[300px] h-[300px] z-[1] md:h-[560px] md:w-[560px]"
-        /> */}
-      {/* </div> */}
-
-      <div className="flex flex-col gap-3 z-[10] pt-20 sm:p-8 md:px-12 lg:px-20 xl:px-40">
+      <div className="flex flex-col gap-3 z-[10] px-4 pt-20 sm:px-8 md:px-12 lg:px-20 xl:px-40">
         <h1 className="text-[24px] text-[#047857] max-w-[500px]">
           Hi, I am Anastasia Dernova 
           Frontend Developer
@@ -27,7 +19,7 @@ export default function Home() {
         </h1>
         <p className="text-[18px] text-[#047857] md:text-[#047857] mb-10 md:pb-2 max-w-[400px]">
           I love building sleek, user-friendly web applications that deliver great experiences.  
-          Check out my projects below or get in touch to collaborate!
+          Check out <Link href="/my-projects" className="text-[#86198f] hover:underline"> my projects here</Link> or get in touch to collaborate!
         </p>
 
       </div>

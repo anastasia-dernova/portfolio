@@ -32,40 +32,40 @@ export const Socials = [
   
   export const ProImages = [
     {
-      src: "/assets/projects/ImageIT.jpg",
-      link: "/miniprojects/quiz",
+      src: "/assets/projects/sudoku.png",
+      link: "/miniprojects/sudoku",
     },
     {
-      src: "/assets/projects/ImageIT1.jpg",
-      link: "/miniprojects/gallery",
+      src: "/assets/projects/movie.png",
+      link: "/miniprojects/movies",
     },
     {
-      src: "/assets/projects/ImageIT2.jpg",
+      src: "/assets/projects/weather.png",
       link: "/miniprojects/weather",
     },
     {
-      src: "/assets/projects/ImageIT3.jpg",
-      link: "/miniprojects/movies",
+      src: "/assets/projects/gallery.png",
+      link: "/miniprojects/gallery",
     },
   ];
   
   export const ProImages2 = [
     {
-      src: "/assets/projects/ImageIT4.jpg",
-      link: "/miniprojects/sudoku",
+      src: "/assets/projects/quiz.png",
+      link: "/miniprojects/quiz",
     },
-    {
-      src: "/assets/projects/ImageIT5.jpg",
-      link: "",
-    },
-    {
-      src: "/assets/projects/ImageIT6.jpg",
-      link: "",
-    },
-    {
-      src: "/assets/projects/ImageIT7.jpg",
-      link: "",
-    },
+    // {
+    //   src: "/assets/projects/ImageIT5.jpg",
+    //   link: "",
+    // },
+    // {
+    //   src: "/assets/projects/ImageIT6.jpg",
+    //   link: "",
+    // },
+    // {
+    //   src: "/assets/projects/ImageIT7.jpg",
+    //   link: "",
+    // },
   ];
   
   
