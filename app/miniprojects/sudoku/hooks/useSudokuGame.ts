@@ -14,47 +14,37 @@ import {
 } from '../utils/sudokuUtils';
 
 export function useSudokuGame() {
-  // State
   const [cellStates, setCellStates] = useState<CellState[][]>([]);
   const [selectedCell, setSelectedCell] = useState<[number, number] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [gameState, setGameState] = useState<GameState>('playing');
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
-  // const [notesMode, setNotesMode] = useState(false);
   const [timer, setTimer] = useState(0);
   const [, setOriginalBoard] = useState<SudokuBoard>([]);
   const [solution, setSolution] = useState<SudokuBoard>([]);
 
-  // Timer ref for cleanup
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   
-  // Get current board values from cell states
   const getCurrentBoard = (): SudokuBoard => {
     return cellStates.map(row => row.map(cell => cell.value));
   };
   
-  // Generate a new puzzle
   const generateNewPuzzle = () => {
     setIsLoading(true);
     setTimer(0);
     setGameState('playing');
     
-    // Generate puzzle with selected difficulty
     const newBoard = generatePuzzle(difficulty);
     setOriginalBoard(JSON.parse(JSON.stringify(newBoard)));
     
-    // Save the solution
     const solutionBoard = JSON.parse(JSON.stringify(newBoard));
     solveSudoku(solutionBoard);
     setSolution(solutionBoard);
-    
-    // Convert to cell states for UI
     setCellStates(boardToCellStates(newBoard));
     setSelectedCell(null);
     setIsLoading(false);
   };
   
-  // Handle cell selection
   const handleCellClick = (row: number, col: number) => {
     if (!cellStates[row][col].isGiven) {
       setSelectedCell([row, col]);
@@ -62,21 +52,17 @@ export function useSudokuGame() {
       setCellStates(prev => {
         const newStates = [...prev];
         
-        // Deselect all cells
         for (let r = 0; r < 9; r++) {
           for (let c = 0; c < 9; c++) {
             newStates[r][c] = {...newStates[r][c], isSelected: false};
           }
         }
-        
-        // Select this cell
         newStates[row][col] = {...newStates[row][col], isSelected: true};
         return newStates;
       });
     }
   };
   
-  // Handle number input
   const handleNumberInput = (num: number | null) => {
     if (!selectedCell || gameState !== 'playing') return;
     
@@ -87,14 +73,12 @@ export function useSudokuGame() {
     setCellStates(prev => {
       const newStates = [...prev];
       
-        // Set value
         newStates[row][col] = {
           ...newStates[row][col], 
           value: num,
           notes: Array(9).fill(false)
         };
         
-        // Check validity
         const currentBoard = newStates.map(r => r.map(c => c.value));
         for (let r = 0; r < 9; r++) {
           for (let c = 0; c < 9; c++) {
@@ -125,7 +109,6 @@ export function useSudokuGame() {
     }, 0);
   };
   
-  // Toggle pause
   const togglePause = () => {
     if (gameState === 'playing') {
       setGameState('paused');
@@ -134,12 +117,6 @@ export function useSudokuGame() {
     }
   };
   
-  // Toggle notes mode - FIX #1: Add this function
-//   const toggleNotes = () => {
-//     setNotesMode(prev => !prev);
-//   };
-  
-  // Get a hint
   const getHint = () => {
     if (!selectedCell || gameState !== 'playing') return;
     
@@ -157,7 +134,6 @@ export function useSudokuGame() {
       return newStates;
     });
     
-    // Check if game is won after hint
     const updatedBoard = getCurrentBoard();
     updatedBoard[row][col] = solution[row][col];
     if (isBoardComplete(updatedBoard)) {
@@ -165,7 +141,6 @@ export function useSudokuGame() {
     }
   };
   
-  // Timer effect
   useEffect(() => {
     if (gameState === 'playing') {
       timerRef.current = setInterval(() => {
@@ -194,10 +169,8 @@ export function useSudokuGame() {
     isLoading,
     gameState,
     difficulty,
-    // notesMode,
     timer,
     setDifficulty,
-    // setNotesMode,
     generateNewPuzzle,
     handleCellClick,
     handleNumberInput,

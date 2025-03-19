@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa"; // Import a download icon
+import { FaDownload } from "react-icons/fa"; 
 
 const DownloadCV = () => {
   return (
@@ -9,7 +9,7 @@ const DownloadCV = () => {
         download="Anastasia Dernova_CV.pdf" 
         className="flex items-center gap-2"
       >
-        <FaDownload size={18} /> {/* Download Icon */}
+        <FaDownload size={18} /> 
         Download CV
       </a>
     </div>
