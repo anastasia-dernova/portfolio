@@ -52,7 +52,7 @@ export const Socials = [
   export const ProImages2 = [
     {
       src: "/assets/projects/quiz.png",
-      link: "/miniprojects/quiz",
+      link: "/miniprojects/adminboard",
     },
     // {
     //   src: "/assets/projects/ImageIT5.jpg",
