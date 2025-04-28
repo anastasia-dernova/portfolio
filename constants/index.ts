@@ -44,23 +44,23 @@ export const Socials = [
       link: "https://image-quality.vercel.app/",
     },
     {
-      src: "/assets/projects/adminDash.png",
+      src: "/assets/projects/adminDash.jpg",
       link: "https://admin-dashboard-xi-peach.vercel.app/",
     },
   ];
   
   export const ProImages2 = [
     {
-      src: "/assets/projects/quiz.png",
-      link: "/miniprojects/quiz",
+      src: "/assets/projects/weather.png",
+      link: "/miniprojects/weather",
     },
     {
       src: "/assets/projects/gallery.png",
       link: "/miniprojects/gallery",
     },
     {
-      src: "/assets/projects/weather.png",
-      link: "/miniprojects/weather",
+      src: "/assets/projects/quiz.png",
+      link: "/miniprojects/quiz",
     },
     // {
     //   src: "/assets/projects/ImageIT7.jpg",
