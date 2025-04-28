@@ -40,11 +40,11 @@ export const Socials = [
       link: "/miniprojects/movies",
     },
     {
-      src: "/assets/projects/imageQuality.jpg",
+      src: "/assets/projects/imageQuality.png",
       link: "https://image-quality.vercel.app/",
     },
     {
-      src: "/assets/projects/adminDash.jpg",
+      src: "/assets/projects/adminDash.png",
       link: "https://admin-dashboard-xi-peach.vercel.app/",
     },
   ];
