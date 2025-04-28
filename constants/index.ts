@@ -44,7 +44,7 @@ export const Socials = [
       link: "https://image-quality.vercel.app/",
     },
     {
-      src: "/assets/projects/adminDash.jpg",
+      src: "/assets/projects/adminDash.png",
       link: "https://admin-dashboard-xi-peach.vercel.app/",
     },
   ];
